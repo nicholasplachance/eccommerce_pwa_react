@@ -2,3 +2,8 @@ body {
     box-sizing: border-box;
     padding: 20px 45px;
 }
+
+a {
+    text-decoration: none;
+    color: #111;
+}
