@@ -29,15 +29,12 @@ class App extends React.Component {
         // get the data related to the user / if any data is stored
         userRef.onSnapshot((snapShot) => {
           // no data is received until .data is invoked
-          this.setState(
-            {
-              currentUser: {
-                id: snapShot.id,
-                ...snapShot.data(),
-              },
+          this.setState({
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data(),
             },
-            () => console.log(this.state)
-          );
+          });
         });
       } else {
         // if user logs out, set currentUser to null
