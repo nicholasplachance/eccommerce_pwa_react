@@ -7,6 +7,9 @@ import { ReactComponent as Logo } from "../../assets/crown.svg";
 import React from "react";
 import { auth } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+import { selectCartHidden } from "../../redux/cart/cart.selectors";
+import { selectCurrentUser } from "../../redux/user/user.selector";
 
 const Header = ({ currentUser, hidden }) => {
   return (
@@ -40,9 +43,10 @@ const Header = ({ currentUser, hidden }) => {
 
 //connects to redux store for access to state
 
-const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
-  currentUser,
-  hidden,
+// createStructuredSelector auto passes top level state to each selector
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+  hidden: selectCartHidden,
 });
 
 export default connect(mapStateToProps)(Header);
