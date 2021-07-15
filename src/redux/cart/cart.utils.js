@@ -1,4 +1,3 @@
-// utility functions allow clean and organized folder and file structure
 export const addItemToCart = (cartItems, cartItemToAdd) => {
   const existingCartItem = cartItems.find(
     (cartItem) => cartItem.id === cartItemToAdd.id
@@ -16,6 +15,7 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
 };
 
 export const removeItemFromCart = (cartItems, cartItemToRemove) => {
+  console.log(cartItems);
   const existingCartItem = cartItems.find(
     (cartItem) => cartItem.id === cartItemToRemove.id
   );
@@ -25,8 +25,8 @@ export const removeItemFromCart = (cartItems, cartItemToRemove) => {
   }
 
   return cartItems.map((cartItem) =>
-    cartItem.id === cartItemToRemove
-      ? { ...cartItems, quantity: cartItem.quantity - 1 }
+    cartItem.id === cartItemToRemove.id
+      ? { ...cartItem, quantity: cartItem.quantity - 1 }
       : cartItem
   );
 };
