@@ -1,9 +1,8 @@
-import "./App.css";
-
 import { Redirect, Route, Switch } from "react-router-dom";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 import CheckoutPage from "./pages/checkout/checkout.component";
+import GlobalStyle from "./global.styles";
 import Header from "./components/header/header.component";
 import HomePage from "./pages/homepage/homepage.component";
 import React from "react";
@@ -43,6 +42,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <GlobalStyle />
         <Header />
         <Switch>
           <Route exact path='/' component={HomePage} />
