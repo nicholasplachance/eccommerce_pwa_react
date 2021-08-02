@@ -5,21 +5,38 @@
     flex-direction: column;
     align-items: center;
     margin: 50px auto 0;
+
+    @media screen and ( max-width: 800px ) {
+      width: 100%;
+      padding: 10px 15px;
+      text-align: center;
+
+       }
   
     .checkout-header {
       width: 100%;
-      padding: 10px 0;
       display: flex;
       justify-content: space-between;
       border-bottom: 1px solid darkgrey;
+
+      @media screen and ( max-width: 800px ) {
+        padding: 15px 0px;
+         }
   
       .header-block {
         text-transform: capitalize;
         width: 23%;
+
+        
   
         &:last-child {
-          width: 8%;
+          width: 12%;
         }
+
+        @media screen and ( max-width: 800px ) {
+          width: 100%;
+          margin: 0px 3px;
+           }
       }
     }
   

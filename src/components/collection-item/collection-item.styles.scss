@@ -7,7 +7,7 @@
     position: relative;
     @media screen and ( max-width: 800px ) {
       width: 40vw;
-
+      height: 420px;
        }
 
   
@@ -47,11 +47,15 @@
     }
   
     .collection-footer {
-      width: 100%;
+      width: 75%;
       height: 5%;
       display: flex;
       justify-content: space-between;
       font-size: 18px;
+
+      @media screen and ( max-width: 800px ) {
+        padding: 0px 3px;
+         }
   
       .name {
         width: 90%;
